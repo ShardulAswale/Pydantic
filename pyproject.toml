@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "car_api"
+version = "0.1.0"
+description = "Simple FastAPI REST API with Basic Auth + CRUD + Pydantic V2 models"
+readme = "README.md"
+authors = [{name = "Shardul Aswale"}]
+requires-python = ">=3.13"
+license = {text = "MIT"}
+dependencies = [
+  "fastapi>=0.114",
+  "uvicorn[standard]>=0.30",
+  "pydantic>=2.7",
+  "pydantic-core>=2.16",
+  "python-multipart>=0.0.9",
+  "datamodel-code-generator>=0.25.1",
+  "motor>=3.6",
+  "python-dotenv>=1.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "httpx>=0.27",
+  "ruff>=0.6",
+  "black>=24.0",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py313"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "UP", "B", "SIM", "PL"]
+ignore = []
+
+[tool.ruff.lint.isort]
+known-first-party = ["car_api"]
+
+[tool.setuptools]
+packages = {find = {where = ["src"]}}
+
+[tool.setuptools.package-data]
+car_api = [
+  "models/schemas/*.json"
+]

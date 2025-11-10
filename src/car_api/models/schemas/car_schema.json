@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/car.schema.json",
+  "title": "Car",
+  "type": "object",
+  "required": [
+    "make",
+    "model",
+    "year",
+    "color",
+    "price"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "make": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 1886
+    },
+    "color": {
+      "type": "string",
+      "minLength": 1
+    },
+    "price": {
+      "type": "number",
+      "minimum": 0
+    }
+  },
+  "additionalProperties": false
+}
