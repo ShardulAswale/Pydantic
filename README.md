@@ -86,15 +86,16 @@ MONGODB_DB=realtime_api
 ---
 
 ## ⚙️ 6️⃣ (Optionally) Generate Pydantic Models
-If you modify JSON schemas, regenerate models:
-
-```bash
-python -m scripts.generate_models
+Use CLI
 ```
-
-This uses `datamodel-code-generator` to produce updated Pydantic V2 classes.
-
----
+python -m datamodel_code_generator \
+  --input src/car_api/models/schemas/car_schema.json \
+  --input-file-type jsonschema \
+  --output src/car_api/models/car_model.py \
+  --target-python-version 3.13 \
+  --disable-timestamps \
+  --output-model-type pydantic_v2.BaseModel
+```
 
 ## ⚙️ 7️⃣ Run the API Server
 ```bash
