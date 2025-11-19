@@ -51,7 +51,7 @@ docker ps
 ## ⚙️ 2️⃣ Clone and Enter Project
 ```bash
 git clone https://github.com/ShardulAswale/Pydantic.git
-cd Pydantic-main
+cd Pydantic
 ```
 
 ---
